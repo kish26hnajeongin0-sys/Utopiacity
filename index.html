@@ -22,7 +22,7 @@
   <section id="view-home" class="view on">
     <h1>미래도시를 탐험해요</h1>
     <p class="lead">방사형 도시를 둘러보고, 시설의 설계 원리를 배우고, 도시 운영의 선택과 결과를 체험합니다. 로그인 없이 바로 시작할 수 있어요.</p>
-    <button class="cta" data-go="explore">도시 입장</button>
+    <button class="cta" data-go="explore">3D 도시 입장</button>
     <div class="card rec">
       <h2>오늘의 추천 체험</h2>
       <p>중앙 발전에 문제가 생긴다면 어떤 대응이 도시를 더 튼튼하게 할까요?</p>
@@ -34,13 +34,14 @@
     <div class="explore">
       <div class="filters" id="filters" role="group" aria-label="시설 필터"></div>
       <div class="stage">
-        <svg id="map" viewBox="0 0 600 600" role="img" aria-label="방사형 도시 개념 배치도"></svg>
+        <div id="stage" class="gl" aria-label="방사형 미래도시 3D 모델"></div>
         <div class="zoom">
           <button id="zin" aria-label="확대">+</button>
           <button id="zout" aria-label="축소">−</button>
           <button id="zhome" aria-label="처음 시점으로">⌂</button>
+          <button id="dn" aria-label="낮·밤 전환" aria-pressed="false">☾</button>
         </div>
-        <p class="note">ⓘ 위치·거리·모양은 교육용 개념 배치입니다.</p>
+        <p class="note">ⓘ 개념 배치도를 바탕으로 한 교육용 3D 모델 · 드래그 회전 · 휠/핀치 확대</p>
       </div>
       <aside id="panel" class="panel" aria-live="polite" aria-label="시설 설명">
         <button id="close" class="x" aria-label="상세 닫기">✕</button>
@@ -73,6 +74,9 @@
     <label class="check"><input type="checkbox" id="calm"> 움직임 줄이기</label>
   </section>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="city3d.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
