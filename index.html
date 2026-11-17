@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081321">
+<title>RADIAL CITY · 방사형 미래도시</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="logo">RADIAL CITY</div>
+  <nav id="nav" aria-label="주요 메뉴">
+    <button data-view="home" class="on"><span aria-hidden="true">⌂</span>홈</button>
+    <button data-view="explore"><span aria-hidden="true">◎</span>탐험</button>
+    <button data-view="lab"><span aria-hidden="true">◈</span>실험</button>
+    <button data-view="info"><span aria-hidden="true">▤</span>정보</button>
+  </nav>
+</header>
+
+<main>
+  <section id="view-home" class="view on">
+    <h1>미래도시를 탐험해요</h1>
+    <p class="lead">방사형 도시를 둘러보고, 시설의 설계 원리를 배우고, 도시 운영의 선택과 결과를 체험합니다. 로그인 없이 바로 시작할 수 있어요.</p>
+    <button class="cta" data-go="explore">도시 입장</button>
+    <div class="card rec">
+      <h2>오늘의 추천 체험</h2>
+      <p>중앙 발전에 문제가 생긴다면 어떤 대응이 도시를 더 튼튼하게 할까요?</p>
+      <button class="ghost" data-go="lab">정전이 발생한다면?</button>
+    </div>
+  </section>
+
+  <section id="view-explore" class="view">
+    <div class="explore">
+      <div class="filters" id="filters" role="group" aria-label="시설 필터"></div>
+      <div class="stage">
+        <svg id="map" viewBox="0 0 600 600" role="img" aria-label="방사형 도시 개념 배치도"></svg>
+        <div class="zoom">
+          <button id="zin" aria-label="확대">+</button>
+          <button id="zout" aria-label="축소">−</button>
+          <button id="zhome" aria-label="처음 시점으로">⌂</button>
+        </div>
+        <p class="note">ⓘ 위치·거리·모양은 교육용 개념 배치입니다.</p>
+      </div>
+      <aside id="panel" class="panel" aria-live="polite" aria-label="시설 설명">
+        <button id="close" class="x" aria-label="상세 닫기">✕</button>
+        <div id="panel-body"><p class="muted">지도에서 시설을 눌러 설계 원리를 확인해 보세요.</p></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="view-lab" class="view">
+    <div class="lab card">
+      <p class="step" id="lab-step"></p>
+      <div id="lab-body"></div>
+    </div>
+  </section>
+
+  <section id="view-info" class="view">
+    <h1>정보</h1>
+    <div class="card">
+      <h2>SDG 9</h2>
+      <p>산업, 혁신, 사회기반시설. 튼튼한 기반시설을 만들고 모두가 쓸 수 있는 혁신을 키우는 목표입니다. 이 앱은 방사형 도시 설계를 그 관점에서 보여 줍니다.</p>
+    </div>
+    <div class="card">
+      <h2>도움말</h2>
+      <p>드래그로 이동, 휠 또는 +/− 버튼으로 확대·축소합니다. Tab으로 시설을 고르고 Enter로 열고 Esc로 닫습니다.</p>
+    </div>
+    <div class="card warn">
+      <h2>꼭 읽어 주세요</h2>
+      <p>이 앱의 점수·그래프·결과는 교육용 가정치이며 실제 발전량, 의료 성능, 교통시간을 예측하지 않습니다. 교통 경로는 순환망을 설명하는 개념 경로입니다.</p>
+    </div>
+    <label class="check"><input type="checkbox" id="calm"> 움직임 줄이기</label>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
